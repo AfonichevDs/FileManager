@@ -1,0 +1,42 @@
+﻿<Window x:Class="FileManager.TextEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FileManager"
+        mc:Ignorable="d"
+        Title="TextEditor" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="Файл">
+                <MenuItem Header="Пошук слова">
+                    <StackPanel Orientation="Horizontal">
+                            <TextBox MinWidth="76" Name="SearchWordBox"></TextBox>
+                        <Button MinWidth="24" Name ="SearchButt" Grid.Column="1">
+                            <Image Source="/Images/search-icon.png" Height="16"></Image>
+                        </Button>
+                        <TextBlock Name="Results"></TextBlock>
+                    </StackPanel>
+                </MenuItem>
+                <MenuItem Header="Почистити Html" IsEnabled="False" Name="ClearHtml">
+                    <StackPanel Orientation="Horizontal" Margin="0 0 -50 0">
+                        <TextBox MinWidth="76" Name="TagWordBox"></TextBox>
+                        <Button MinWidth="24" Name ="ClearTagButt" Grid.Column="1">
+                            <Image Source="/Images/check-icon.png" Height="16"></Image>
+                        </Button>
+                    </StackPanel>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Допомога"></MenuItem>
+        </Menu>
+        <ScrollViewer Grid.Row="1">
+            <RichTextBox Name="MainContent">
+
+            </RichTextBox>
+        </ScrollViewer>
+    </Grid>
+</Window>

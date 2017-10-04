@@ -1,0 +1,29 @@
+﻿<Window x:Class="FileManager.FileSearchResult"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FileManager"
+        mc:Ignorable="d"
+        Title="FileSearchResult" Height="300" Width="300" MaxWidth="500" MaxHeight="700">
+    <Grid>
+        <TreeView Name="ResultTree">
+            <TreeView.Resources>
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <Setter Property="HeaderTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Images/file-icon.png" Height="18"></Image>
+                                    <TextBlock Text="{Binding}" Margin="5,0" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Margin" Value="-10 0">
+                    </Setter>
+                </Style>
+            </TreeView.Resources>
+        </TreeView>
+    </Grid>
+</Window>
